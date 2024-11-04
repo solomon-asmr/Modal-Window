@@ -17,3 +17,10 @@ for (let i = 0; i < btnShowModal.length; i++) {
 }
 closeModal.addEventListener('click', closeModel);
 overlay.addEventListener('click', closeModel);
+
+// key press functionality
+document.addEventListener('keydown', function (ev) {
+  //this helps to chatch every global event on the keyboard or else where
+  console.log(ev); //to see which event happened
+  if (ev.key == 'Escape' && !modal.classList.contains('hidden')) closeModel();
+});
